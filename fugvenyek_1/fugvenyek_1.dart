@@ -15,8 +15,10 @@ void main() {
     sumOfDigits(num3);
 }
 void getRandomNumber(){
-    var random = Random();
-    int randomNumber = random.nextInt(99) + 1;
+    // var random = Random();
+    // int randomNumber = random.nextInt(99) + 1;
+    // print("Random szám: $randomNumber");
+    int randomNumber = Random().nextInt(99) + 1;
     print("Random szám: $randomNumber");
 }
 void getEvenOdd(int a){
@@ -62,7 +64,9 @@ void getFirstChar(b){
     print(b[0]);
 }
 void sumOfDigits(int c){
+  int sum = 0;
  for (var i = 0; i < c; i++) {
-   
+   sum += i;
  }
+ print(sum);
 }
