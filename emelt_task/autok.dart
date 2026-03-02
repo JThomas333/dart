@@ -1,6 +1,5 @@
-import 'dart:ffi';
+
 import 'dart:io';
-import 'dart:math';
 
 void main() {
   File file = File("jeladas.txt");
