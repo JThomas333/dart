@@ -1,6 +1,5 @@
 
 import 'dart:io';
-
 void main() {
   File file = File("jeladas.txt");
   List<String> lines = file.readAsLinesSync();
@@ -88,37 +87,27 @@ void main() {
       print(adat);
     }
   }
-
   print("7. Feladat");
   Map<String, Map<String, String>> login = {};
-  // {rendszam: {
-  //   {elso: '6 30'},
-  //   {utolso : '8 45'}
-  // }}
-  for (var auto in autok) {
-    if (login.containsKey(auto["rendszam"])) {
-      var ora = auto["ido"] ~/ 60;
-      var perc = auto["ido"] % 60;
-      login[auto["rendszam"]["utolso"]] = "$ora $perc" as Map<String, String>;
-    } else {
-      var ora = auto["ido"] ~/ 60;
-      var perc = auto["ido"] % 60;
-      login[auto["rendszam"]["elso"]] = "$ora $perc" as Map<String, String>;
-    }
-  }
-  for (var auto in login.entries) {
-    print("${auto.key} ${auto.value["elso"]} ${auto.value["utolso"]}");
+
+for (var auto in autok) {
+var ora = auto['ido'] ~/ 60;
+var perc = auto['ido'] % 60;
+
+if (login.containsKey(auto['rendszam'])) {
+login[auto['rendszam']]!['utolso'] = "$ora $perc";
+} else {
+login[auto['rendszam']] = {'elso': "$ora $perc", 'utolso': "$ora $perc"};
+}
+}
+
+String kimenet = "";
+for (var auto in login.entries) {
+kimenet += "${auto.key}: ${auto.value['elso']} - ${auto.value['utolso']}\n";
+}
+file = File("ido.txt");
+file.writeAsStringSync(kimenet);
+
+
  
-  }
-
-
-  Map<String, Map<String, String>> data = {};
-  data['a'] = {'elso': '6 10'};
-  data['aa'] = {'elso': '6 15'};
-  data['b'] = {'elso': '6 20', 'utolso': '6 20'};
-  print(data);
-  data['a'] = {'elso': data['a']!['elso']!, 'utolso': '8 45'};
-  data['aa'] = {...data['aa']!, 'utolso': '8 10'};
-  data['b']!['utolso'] = '8 55';
-  print(data);
 }
