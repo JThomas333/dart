@@ -50,38 +50,69 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('Hányszór katintottam a gombra:'),
-            Text(
-              '$_counter',
-              style: TextStyle(
-                fontSize: 26,
-                color: const Color.fromARGB(255, 167, 134, 36),
-                fontWeight: FontWeight.bold,
-                backgroundColor: const Color.fromARGB(255, 147, 233, 176),
+
+                Text(
+                "Kinyitottam életregényemet, lapoztam\nbenne, és a tartalmas életút fejezet\ncímnél hosszan elidőztem, kissé haboztam,\nez most sok vagy kevés, vakartam a fejemet",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton(
-                  onPressed: () {
-                    setState(() {
-                      _counter--;
-                    });
-                  },
-                  tooltip: 'Decrement',
-                  child: const Icon(Icons.remove),
+
+              const SizedBox(height: 50),
+
+              //2. vers
+              Text(
+                "A juhok természetesen csak legelnek,\naz emberek lazán feleselnek.",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.blue,
+                  fontStyle: FontStyle.italic,
                 ),
-                SizedBox(width: 40,),
-                FloatingActionButton(
-                  onPressed: _incrementCounter,
-                  tooltip: 'Increment',
-                  child: const Icon(Icons.add),
-                ),
-              ],
-            ),
-            SizedBox(height: 20,),
+              ),
+
+              const SizedBox(height: 30),
+
+
+
+
+            // const Text('Hányszór katintottam a gombra:'),
+            // Text(
+            //   '$_counter',
+            //   style: TextStyle(
+            //     fontSize: 26,
+            //     color: const Color.fromARGB(255, 167, 134, 36),
+            //     fontWeight: FontWeight.bold,
+            //     backgroundColor: const Color.fromARGB(255, 147, 233, 176),
+            //   ),
+            // ),
+            // SizedBox(height: 30),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     FloatingActionButton(
+            //       onPressed: () {
+            //         setState(() {
+            //           _counter--;
+            //         });
+            //       },
+            //       tooltip: 'Decrement',
+            //       child: const Icon(Icons.remove),
+            //     ),
+            //     SizedBox(width: 40,),
+            //     FloatingActionButton(
+            //       onPressed: _incrementCounter,
+            //       tooltip: 'Increment',
+            //       child: const Icon(Icons.add),
+            //     ),
+            //   ],
+            // ),
+            // SizedBox(height: 20,),
+
+
+
+
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.center,
             //   children: [
